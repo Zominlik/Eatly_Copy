@@ -15,7 +15,7 @@ const initialValues = {
     email: "",
   }
   
-  const validate = (values) => {
+  const validate:any = (values:any) => {
     const errors = {
   
     };
@@ -49,7 +49,7 @@ const Subscribe = () => {
             else {
             //   router.push('/login')
             }
-          }catch (err) {
+          }catch (err:any) {
             alert(err?.message)
           }
         },
