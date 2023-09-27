@@ -14,7 +14,7 @@ export type AllpropsType = {
     styles?: CSSProperties;
     img?: HTMLImageElement;
     alt?:string;
-    url?: string | number;
+    url?: string | number | any;
     href?: any | string;
     autoComplete?:string;
     required?: any;

@@ -3,7 +3,7 @@ import axios from "axios";
 import { memo, useState, useEffect } from "react";
 import { AllpropsType } from "../TsTypes"
 
-const useAxiosFetch = ({dataUrl}:AllpropsType) => {
+const useAxiosFetch = ({dataUrl}:AllpropsType | any) => {
 
     const [datas, setDatas] = useState<any>([]);
     const [error, setError] = useState<any>(null);
@@ -14,7 +14,7 @@ const useAxiosFetch = ({dataUrl}:AllpropsType) => {
         let isMounted = true;
         const source = axios.CancelToken.source();
 
-        const fetchData = async (url:AllpropsType) => {
+        const fetchData = async (url:AllpropsType | any) => {
             setLoading(true);
             try {
                     const response = await axios.get(url,
@@ -28,7 +28,7 @@ const useAxiosFetch = ({dataUrl}:AllpropsType) => {
                         console.log(datas)
                     }
                 
-            } catch (err) {
+            } catch (err:any) {
                 if(isMounted) {
                     setError(err.message)
                     setLoading(false);
