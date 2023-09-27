@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import { Div } from "./Components";
 import { SearchProvider } from "./context/SearchContext";
+import { CartProvider } from "./context/CardContext";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -20,6 +21,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
+      <CartProvider>
       <SearchProvider>
         <body className={inter.className}>
           <Div className="select-none main container mx-auto flex flex-col justify-between bg-[#F9F9F9]">
@@ -27,6 +29,7 @@ export default function RootLayout({
           </Div>
         </body>
       </SearchProvider>
+      </CartProvider>
     </html>
   );
 }

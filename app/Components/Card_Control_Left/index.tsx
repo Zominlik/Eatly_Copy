@@ -2,7 +2,7 @@ import { memo } from "react"
 import Image from "next/image"
 import { Div, Ul, Li, Span } from ".."
 
-const Card_Control_Left = ({ wallet_Icon, divider }) => {
+const Card_Control_Left = ({ wallet_Icon, divider }:any) => {
     return (
         <Div className='cart_Wrapper'>
             <Div className='flex flex-col justify-center gap-[1.276rem] p-[1.571rem] rounded-[1.178rem] border border-[0.098rem] border-[#EDF2F7]'>

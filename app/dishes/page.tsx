@@ -13,16 +13,17 @@ import Header from "../Components/Header/index";
 import Footer from "../Components/Footer/index";
 import Loader from "../Components/Loader/index";
 import { A_tag, Button, Div, Form, Label, Li, P, Section, Ul, Input } from "../Components";
-
+import { CartContext } from "../context/CardContext";
 const Dishes = () => {
-
+  
+  const { cart, setCart } = useContext<any>(CartContext);
   
   const dishes = useDishesStore((state: any) => state.dishes);
   const loading = useDishesStore((state: any) => state.loading);
   const error = useDishesStore((state: any) => state.error);
   const fetchDishes = useDishesStore((state: any) => state.fetchDishes);
 
-  const { search, setSearch } = useContext(SearchContext);
+  const { search, setSearch } = useContext<any>(SearchContext);
 
   const [currentPage, setCurrentPage] = useState(1);
   const lastPage = 4;
@@ -42,10 +43,6 @@ const Dishes = () => {
       setCurrentPage(currentPage + 1);
     }
   }
-
-  const cart = useCartStore((state: any) => state.myDishes);
-  const set = useCartStore((state: any) => state.local);
-  console.log(cart);
 
   useEffect(() => {
     fetchDishes();
@@ -107,7 +104,7 @@ const Dishes = () => {
                           <Button
                             type="button"
                             onClick={() =>
-                              set(
+                              setCart(
                                 cart !== null
                                   ? [
                                       ...cart,
@@ -165,73 +162,3 @@ const Dishes = () => {
 };
 
 export default memo(Dishes);
-
-// const Dishes = () => {
-
-//   const [data, setData] = useState([]);
-//   const [isLoading, setLoading] = useState(false);
-//   const [error, setError] = useState(null);
-//   // console.log(data)
-
-// const url = "http://207.154.221.44:4002/api"
-
-// let page = 13;
-
-//     const formik = useFormik({
-//       initialValues,
-//       onSubmit: async (values) => {
-//         setLoading(true);
-//         setError(null);
-//         console.log(values)
-//         try {
-//       const response = await axios.get(`${url}/dishes?_page=${page}&_limit=15`);
-//       // const response = await axios.get(`${url}/dishes`);
-//       console.log(response.data)
-//           setData(response.data.data);
-//         }catch (err) {
-//           alert(err?.message)
-//           setError(err);
-//         }finally {
-//           setLoading(false);
-//       }
-//       },
-//       validate,
-//     });
-
-//     return (
-//         <>
-//             <Header />
-//             <main className="">
-//                 <Section className="px-24" id="">
-
-//           <Form onSubmit={formik.handleSubmit} action="" className="w-full pt-[4rem]" >
-//                 <Div className="relative mb-6">
-//               <Input required="required"
-//               autoComplete="name"
-//               id="name"
-//               name="name"
-//               defaultValue={formik.values.name}
-//               onChange={formik.handleChange}
-//               onBlur={formik.handleBlur}
-//               type="text"
-//               className="py-[1.5rem] rounded-[0.892rem] peer block min-h-[auto] w-full border-0 bg-transparent px-3 leading-[1.6] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 data-[te-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none dark:text-neutral-200 dark:placeholder:text-neutral-200 [&:not([data-te-input-placeholder-active])]:placeholder:opacity-0" placeholder="Enter Full Name" />
-//               {formik.touched.name && formik.errors.name ? <Span className="text-red-600 pt-[0.5rem]">{formik.errors.name}</Span> : null}
-//               <Label htmlFor="label" className="pointer-events-none absolute left-3 top-0 mb-0 max-w-[90%] origin-[0_0] truncate pt-[0.37rem] leading-[1.6] text-neutral-500 transition-all duration-200 ease-out peer-focus:-translate-y-[0.9rem] peer-focus:scale-[0.8] peer-focus:text-primary peer-data-[te-input-state-active]:-translate-y-[0.9rem] peer-data-[te-input-state-active]:scale-[0.8] motion-reduce:transition-none dark:text-neutral-200 dark:peer-focus:text-primary">Full Name</Label>
-//             </Div>
-//             <Button type="submit" className="bg-[#6C5FBC] rounded-[0.973rem] dark:active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)]] inline-block w-full bg-primary px-6 py-[1.5rem] text-xs font-medium uppercase leading-normal text-white shadow-[0_4px_9px_-4px_#3b71ca] transition duration-150 ease-in-out hover:bg-primary-600 hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:bg-primary-600 focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:outline-none focus:ring-0 active:bg-primary-700 active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] dark:shadow-[0_4px_9px_-4px_rgba(59,113,202,0.5)] dark:hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] dark:focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)]">
-//               <Span className="text-[1.112rem] font-semibold tracking-tighter-[0.033rem]">
-//                 Search
-//               </Span>
-//             </Button>
-//             </Form>
-
-//                     <Popular_Dishes />
-//                     <FAQs_Dishes />
-//                 </Section>
-//                 <Footer />
-//             </main>
-//         </>
-//     )
-// }
-
-// export default memo(Dishes);

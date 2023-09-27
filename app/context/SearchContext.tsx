@@ -1,9 +1,9 @@
 "use client";
 import { createContext, useState } from "react";
 
-const SearchContext = createContext();
+const SearchContext = createContext<any>(null);
 
-function SearchProvider({ children }) {
+function SearchProvider({ children }:any) {
   const [search, setSearch] = useState("");
 
   let values = {

@@ -3,7 +3,7 @@ import { Button, Div, H2, P } from '..';
 import Image from 'next/image';
 import Plus_Icon_Question_Box from "@/public/Icons/Plus_Icon_Question_Box.png"
 
-const Dishes_Question_Card = ({ Question_Title, Question_subTitle }) => {
+const Dishes_Question_Card = ({ Question_Title, Question_subTitle }:any) => {
     return (
         <Div className="flex flex-col gap-[1.221rem] pt-[1.797rem] pb-[2.704rem] px-[1rem] border-b-[0.066rem] border-b-[#ADADAD] ">
             <Div className="flex justify-between">
