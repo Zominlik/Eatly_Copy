@@ -7,4 +7,4 @@ const Urls = () => {
   return {baseUrl}
 }
 
-export default memo(Urls)
+export default Urls
