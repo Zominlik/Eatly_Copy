@@ -92,7 +92,7 @@ const Cart = () => {
                 </div>
               ))
             ) : (
-              <h4>Hali sizga yoqgan mahsulot yo'q!!!</h4>
+              <h4>Hali sizga yoqgan mahsulot yoq!!!</h4>
             )}
           </div>
         </div>
