@@ -8,7 +8,12 @@ import { Button, Div, Li, Modal_Items, Ul } from ".."
 import Link from "next/link"
 import { usePathname } from 'next/navigation'
 
+if (typeof localStorage !== 'undefined') {
+    // Access and use localStorage here
 const authToken = (localStorage.getItem('authToken'))
+  } else {
+    console.log('localStorage is not available.');
+  }
 
 const Header = () => {
     const [toggle, setToggle] = useState(true)
