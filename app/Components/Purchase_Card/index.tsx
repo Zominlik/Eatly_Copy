@@ -4,7 +4,7 @@ import { Div, Li, Span, Ul, } from '..';
 
 
 
-const Purchase_Card = ({ Image_Subscribe }) => {
+const Purchase_Card = ({ Image_Subscribe }:any) => {
     return (
         <Div className="Purchase_Card flex justify-center gap-[2.659rem] shadow-lg w-[21.573rem] rounded-[0.753rem] px-[1.066rem] py-[0.263rem]">
             <Div className="flex gap-[1.191rem] ">
