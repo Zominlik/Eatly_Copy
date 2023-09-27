@@ -55,7 +55,7 @@ const Dishes = () => {
       <main>
         <Section className="flex pt-[3.556rem] pb-[12.125rem] px-[4.267rem]                 xxs:flex xxs:flex-col xxs:pt-[3.563rem] xxs:pb-[5.688rem] xxs:px-[1.313rem]               xs:flex xs:flex-col xs:pt-[3.563rem] xs:pb-[5.688rem] xs:px-[1.313rem]         sm:flex sm:flex-col sm:pt-[3.563rem] sm:pb-[5.688rem] sm:px-[1.313rem]            md:flex md:pt-[3.563rem] md:pb-[5.688rem] md:px-[2.313rem]" id="">
           <Div className="container mx-auto flex flex-col gap-[0.8rem]">
-            <Form className="rounded-lg flex flex-col items-center justify-center border" action="" onSubmit="">
+            <Form className="rounded-lg flex flex-col items-center justify-center border" action="" onSubmit={()=> {}}>
               <Label className="pointer-events-none absolute left-3 top-0 mb-0 max-w-[90%] origin-[0_0] truncate pt-[0.37rem] leading-[1.6] text-neutral-500 transition-all duration-200 ease-out peer-focus:-translate-y-[0.9rem] peer-focus:scale-[0.8] peer-focus:text-primary peer-data-[te-input-state-active]:-translate-y-[0.9rem] peer-data-[te-input-state-active]:scale-[0.8] motion-reduce:transition-none dark:text-neutral-200 dark:peer-focus:text-primary" htmlFor="input">Search Product</Label>
               <Input
                 autoComplete=""
