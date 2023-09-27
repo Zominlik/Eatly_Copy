@@ -11,13 +11,13 @@ export type TodoContextType = {
   saveTodo: (todo: ITodo) => void;
   updateTodo: (id: number) => void;
 };
-const CartContext = createContext<TodoContextType>();
+const CartContext = createContext<TodoContextType | null>(null);
 
 function CartProvider({ children }: any) {
-  const cartLocal = window.localStorage.getItem("mycart");
+  const cartLocal = localStorage.getItem("mycart");
 
   const [cart, setCart] = useState<any>(JSON.parse(cartLocal));
-  window.localStorage.setItem("mycart", JSON.stringify(cart));
+  localStorage.setItem("mycart", JSON.stringify(cart));
 
   let values: any = {
     cart,

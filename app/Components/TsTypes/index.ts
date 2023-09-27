@@ -2,7 +2,7 @@ import { ReactNode, FormEvent, MouseEvent, ChangeEvent, CSSProperties, FocusEven
 import { errors } from './../../../.next/static/chunks/fallback/main';
 
 export type AllpropsType = {
-    name?: string | number
+    name?: string | number | any;
     email?: string;
     className?: string;
     children?: string | ReactNode;
