@@ -1,5 +1,4 @@
 import { ReactNode, FormEvent, MouseEvent, ChangeEvent, CSSProperties, FocusEvent, ButtonHTMLAttributes } from "react";
-import { errors } from './../../../.next/static/chunks/fallback/main';
 
 export type AllpropsType = {
     name?: string | number | any;
