@@ -80,9 +80,9 @@ const Dishes = () => {
                         ? item
                         : item.name.toLowerCase().includes(search);
                     })
-                    .map((dish, index) => (
+                    .map((dish:any, index:number) => (
                       <Li className="dishes__card" key={index}>
-                        <img
+                        <Image
                           className="dishes__card-img"
                           src={`${ApiUrl}/${dish.image}`}
                           alt="img"
