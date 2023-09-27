@@ -6,7 +6,7 @@ import { Li, Ul } from '..'
 import Image from 'next/image'
 
 
-const ModalItem = ({ setToggle }) => {
+const ModalItem = ({ setToggle }:any) => {
 
     return (
         <Ul className="modalItems bg-white hidden flex flex-col gap-[11rem]     xxs:inline-block xs:inline-block sm:inline-block md:hidden lg:hidden xl:hidden xxl:hidden         sm:fixed sm:top-0 sm:right-[5rem] sm:fixed xs:top-0 sm:right-0 md:hidden">
