@@ -18,16 +18,3 @@ export const useCartStore:any = create((set:any) => ({
 }));
 
 console.log(useCartStore.equalityFn);
-
-// export const useStore = create(
-//   persist(
-//     (set, get) => ({
-//       fishes: 0,
-//       addAFish: () => set({ fishes: get().fishes + 1 }),
-//     }),
-//     {
-//       name: "food-storage", // unique name
-//       getStorage: () => sessionStorage, // (optional) by default the 'localStorage' is used
-//     }
-//   )
-// );

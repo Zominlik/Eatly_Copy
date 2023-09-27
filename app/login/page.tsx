@@ -47,7 +47,13 @@ const Login = () => {
           try {
             const res = await axios.post("http://207.154.221.44:4002/api/login", values)
             console.log(res.data.data)
+            if (typeof localStorage !== 'undefined') {
+              // Access and use localStorage here
             localStorage.setItem("authToken", JSON.stringify(res?.data?.data));
+              // console.log(data);
+            } else {
+              console.log('localStorage is not available.');
+            }
             console.log(values)
             if(res?.data?.status === 200) {
               router.push('/home')
