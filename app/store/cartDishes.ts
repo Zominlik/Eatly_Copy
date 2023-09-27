@@ -1,6 +1,6 @@
 import { create } from "zustand";
 
-export const useCartStore = create((set) => ({
+export const useCartStore:any = create((set:any) => ({
   myDishes: [
     {
       image: "",
@@ -11,7 +11,7 @@ export const useCartStore = create((set) => ({
       name: "",
     },
   ],
-  local: (myDishes) =>
+  local: (myDishes:any) =>
     set(() => {
       localStorage.setItem("LOCAL_KEY", JSON.stringify(myDishes));
     }),
