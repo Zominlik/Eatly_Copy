@@ -59,4 +59,4 @@ const useAxiosFetch = ({dataUrl}:AllpropsType | any) => {
     return {datas, error, loading}
 }
 
-export default memo(useAxiosFetch)
+export default useAxiosFetch
