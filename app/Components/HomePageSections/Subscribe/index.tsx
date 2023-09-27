@@ -16,7 +16,7 @@ const initialValues = {
   }
   
   const validate:any = (values:any) => {
-    const errors = {
+    const errors:any = {
   
     };
     if (!values.email){
