@@ -9,14 +9,14 @@ import axios from "axios";
 import { useRouter } from 'next/navigation'
 import Link from "next/link";
 
-const initialValues = {
+const initialValues:any = {
   name: "",
   email: "",
   password: "",
 }
 
-const validate = (values) => {
-  const errors = {
+const validate = (values:any) => {
+  const errors: any = {
 
   };
   if (!values.name){
@@ -58,7 +58,7 @@ const Register = () => {
         else {
           router.push('/')
         }
-      }catch (err) {
+      }catch (err:any) {
         alert(err?.message)
       }
     },
